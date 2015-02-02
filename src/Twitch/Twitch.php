@@ -11,7 +11,7 @@ class Twitch
   /* Get channel informations */
   public function getChannel($name)
   {
-    
+    return "debug";
   }
 
 }
