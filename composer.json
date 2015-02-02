@@ -1,0 +1,27 @@
+{
+    "name": "frostbit/twitch",
+    "version": "1.0.0",
+    "license": "GPL-2.0+",
+    "type": "library",
+    "description": "The \"Twitch\" API developed by Frostbit.cz",
+    "authors": [
+        {
+            "name": "Tomas Volsansky",
+            "email": "volsansky.tomas@frostbit.cz",
+            "homepage": "http://www.frostbit.cz/",
+            "role": "Developer"
+        },
+        {
+            "name": "Jiri Bosak",
+            "email": "bosak.jiri@frostbit.cz",
+            "homepage": "http://www.frostbit.cz/",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "": "src/" }
+    }
+    "require": {
+        "php": ">=5.3.3"
+    },
+}
