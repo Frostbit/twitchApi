@@ -26,6 +26,9 @@ class Twitch
       case "channel":
         $url = self::API_URL . "/channels/" . $param;
         break;
+      case "channel-videos":
+        $url = self::API_URL . "/channels/" . $param . "/videos";
+        break;
       default:
         $url = self::API_URL . "/channels/" . $param;
     }
@@ -48,6 +51,12 @@ class Twitch
   public function getChannel($name)
   {
     return $this->getResponse("channel", $name);
+  }
+
+  /* Get channel videos */
+  public function getChannelVideos($name)
+  {
+    return $this->getResponse("channel-videos", $name);
   }
 
 }
