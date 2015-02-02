@@ -38,7 +38,7 @@ class Twitch
   /* Get channel informations */
   public function getChannel($name)
   {
-    return this->getResponse("channel", $name);
+    return $this->getResponse("channel", $name);
   }
 
 }
