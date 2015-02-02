@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * Twitch API Library
+ * @author Tomas Volsansky <volsansky.tomas@frostbit.cz>
+ * @version 1.0.0
+ * @package Twitch
+ */
+
 namespace Frostbit\Twitch;
 
 class Twitch
@@ -15,11 +22,13 @@ class Twitch
         die('cURL is not installed! Check your php.ini and enable cURL.');
     }
 
-    $apiTypes = array(
-      "channel" => API_URL . "/channels/" . $param
-    );
-
-    $url = $apiTypes[$type][$param];
+    switch ($type) {
+      case "channel":
+        $url = self::API_URL . "/channels/" . $param;
+        break;
+      default:
+        $url = self::API_URL . "/channels/" . $param;
+    }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
