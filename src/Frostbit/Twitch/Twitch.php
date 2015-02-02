@@ -1,6 +1,6 @@
 <?php
 
-namespace Twitch;
+namespace Frostbit\Twitch;
 
 class Twitch
 {

@@ -19,7 +19,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "": "src/" }
+        "psr-0": { "Frostbit\\Twitch\\": "src/" }
     },
     "require": {
         "php": ">=5.3.3"
