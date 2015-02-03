@@ -40,49 +40,49 @@ class Twitch
       $result = false;
     }
 
-    return $result;
+    return json_decode($result);
   }
 
   /* Get channel informations */
   public function getChannel($name)
   {
     $url = self::API_URL . "/channels/" . $name;
-    return json_decode($this->getResponse($url));
+    return $this->getResponse($url);
   }
 
   /* Get channel videos */
   public function getChannelVideos($name)
   {
     $url = self::API_URL . "/channels/" . $name . "/videos";
-    return json_decode($this->getResponse($url));
+    return $this->getResponse($url);
   }
 
   /* Get channel follows */
   public function getChannelFollows($name)
   {
     $url = self::API_URL . "/channels/" . $name . "/follows";
-    return json_decode($this->getResponse($url));
+    return $this->getResponse($url);
   }
 
   /* Get top games (available params limit, offset) */
   public function getGames($limit = 10, $offset = 0)
   {
     $url = self::API_URL . "/games/top?limit=" . $limit . "&offset=" . $offset;
-    return json_decode($this->getResponse($url));
+    return $this->getResponse($url);
   }
 
   /* Get chat informations */
   public function getChat($name)
   {
     $url = self::API_URL . "/chat/" . $name;
-    return json_decode($this->getResponse($url));
+    return $this->getResponse($url);
   }
 
   /* Get chat emoticons */
   public function getChatEmoticons($name)
   {
     $url = self::API_URL . "/chat/" . $name . "/emoticons";
-    return json_decode($this->getResponse($url));
+    return $this->getResponse($url);
   }
 
 }
