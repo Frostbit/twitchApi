@@ -16,7 +16,7 @@ class Twitch
   const ACCEPT    = 'application/vnd.twitchtv.v3+json';
 
   /* Get Twitch API response */
-  private function getResponse($type, $param)
+  private function getResponse($type, $param, $param2)
   {
     if (!function_exists('curl_init')){
         die('cURL is not installed! Check your php.ini and enable cURL.');
@@ -28,6 +28,18 @@ class Twitch
         break;
       case "channel-videos":
         $url = self::API_URL . "/channels/" . $param . "/videos";
+        break
+      case "channel-follows":
+        $url = self::API_URL . "/channels/" . $param . "/follows";
+        break;
+      case "games":
+        $url = self::API_RUL . "/games/top?limit=" . $param . "&offset=" . $param2;
+        break;
+      case "chat":
+        $url = self::API_URL . "/chat/" . $param;
+        break;
+      case "chat-emoticons":
+        $url = self::API_URL . "chat/" . $param . "/emoticons";
         break;
       default:
         $url = self::API_URL . "/channels/" . $param;
@@ -57,6 +69,30 @@ class Twitch
   public function getChannelVideos($name)
   {
     return $this->getResponse("channel-videos", $name);
+  }
+
+  /* Get channel follows */
+  public function getChannelFollows($name)
+  {
+    return $this->getResponse("channel-follows", $name);
+  }
+
+  /* Get top games (available params limit, offset) */
+  public function getGames($limit, $offset)
+  {
+    return $this->getResponse("games", $limit, $offset)
+  }
+
+  /* Get chat informations */
+  public function getChat($name)
+  {
+    return $this->getResponse("chat", $name);
+  }
+
+  /* Get chat emoticons */
+  public function getChatEmoticons($name)
+  {
+    return $this->getResponse("chat-emoticons", $name);
   }
 
 }
