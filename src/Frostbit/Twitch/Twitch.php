@@ -87,7 +87,7 @@ class Twitch
   /* Get top games (available params limit, offset) */
   public function getGames($limit, $offset)
   {
-    return $this->getResponse("games", $limit, $offset)
+    return $this->getResponse("games", $limit, $offset);
   }
 
   /* Get chat informations */
