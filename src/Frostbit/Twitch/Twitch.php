@@ -85,7 +85,7 @@ class Twitch
   }
 
   /* Get top games (available params limit, offset) */
-  public function getGames($limit, $offset)
+  public function getGames($limit = 10, $offset = 0)
   {
     return $this->getResponse("games", $limit, $offset);
   }
