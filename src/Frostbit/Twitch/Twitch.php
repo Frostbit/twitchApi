@@ -39,7 +39,7 @@ class Twitch
         $url = self::API_URL . "/chat/" . $param;
         break;
       case "chat-emoticons":
-        $url = self::API_URL . "chat/" . $param . "/emoticons";
+        $url = self::API_URL . "/chat/" . $param . "/emoticons";
         break;
       default:
         $url = self::API_URL . "/channels/" . $param;
