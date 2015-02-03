@@ -55,13 +55,13 @@ class Twitch
 
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
+    $result = curl_exec($ch);
+    curl_close($ch);
+
     if(!$httpCode != 200) {
       // TO-DO: Without response, insert message into log
       $result = false;
     }
-
-    $result = curl_exec($ch);
-    curl_close($ch);
 
     return $result;
   }
