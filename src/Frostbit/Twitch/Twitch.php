@@ -28,7 +28,7 @@ class Twitch
     curl_setopt($ch, CURLOPT_REFERER, "https://www.sounddonate.com/");
     curl_setopt($ch, CURLOPT_USERAGENT, "SoundDonate/1.0.0");
     curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Client-ID: ' . self::CLIENT_ID));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: ' . self::ACCEPT, 'Client-ID: ' . self::CLIENT_ID));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
