@@ -16,33 +16,10 @@ class Twitch
   const ACCEPT    = 'application/vnd.twitchtv.v3+json';
 
   /* Get Twitch API response */
-  private function getResponse($type, $param, $param2)
+  private function getResponse($url)
   {
     if (!function_exists('curl_init')){
         die('cURL is not installed! Check your php.ini and enable cURL.');
-    }
-
-    switch ($type) {
-      case "channel":
-        $url = self::API_URL . "/channels/" . $param;
-        break;
-      case "channel-videos":
-        $url = self::API_URL . "/channels/" . $param . "/videos";
-        break;
-      case "channel-follows":
-        $url = self::API_URL . "/channels/" . $param . "/follows";
-        break;
-      case "games":
-        $url = self::API_URL . "/games/top?limit=" . $param . "&offset=" . $param2;
-        break;
-      case "chat":
-        $url = self::API_URL . "/chat/" . $param;
-        break;
-      case "chat-emoticons":
-        $url = self::API_URL . "/chat/" . $param . "/emoticons";
-        break;
-      default:
-        $url = self::API_URL . "/channels/" . $param;
     }
 
     $ch = curl_init();
@@ -69,37 +46,43 @@ class Twitch
   /* Get channel informations */
   public function getChannel($name)
   {
-    return $this->getResponse("channel", $name);
+    $url = self::API_URL . "/channels/" . $name;
+    return $this->getResponse($url);
   }
 
   /* Get channel videos */
   public function getChannelVideos($name)
   {
-    return $this->getResponse("channel-videos", $name);
+    $url = self::API_URL . "/channels/" . $name . "/videos";
+    return $this->getResponse($url);
   }
 
   /* Get channel follows */
   public function getChannelFollows($name)
   {
-    return $this->getResponse("channel-follows", $name);
+    $url = self::API_URL . "/channels/" . $name . "/follows";
+    return $this->getResponse($url);
   }
 
   /* Get top games (available params limit, offset) */
   public function getGames($limit = 10, $offset = 0)
   {
-    return $this->getResponse("games", $limit, $offset);
+    $url = self::API_URL . "/games/top?limit=" . $limit . "&offset=" . $offset;
+    return $this->getResponse($url);
   }
 
   /* Get chat informations */
   public function getChat($name)
   {
-    return $this->getResponse("chat", $name);
+    $url = self::API_URL . "/chat/" . $name;
+    return $this->getResponse($url);
   }
 
   /* Get chat emoticons */
   public function getChatEmoticons($name)
   {
-    return $this->getResponse("chat-emoticons", $name);
+    $url = self::API_URL . "/chat/" . $name . "/emoticons";
+    return $this->getResponse($url);
   }
 
 }
