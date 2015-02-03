@@ -14,6 +14,7 @@ class Twitch
 
   const API_URL   = 'https://api.twitch.tv/kraken';
   const ACCEPT    = 'application/vnd.twitchtv.v3+json';
+  const CLIENT_ID = 'fkevhl9oi795jqt3bdwmfn6xupunzkf';
 
   /* Get Twitch API response */
   private function getResponse($url)
@@ -27,6 +28,7 @@ class Twitch
     curl_setopt($ch, CURLOPT_REFERER, "https://www.sounddonate.com/");
     curl_setopt($ch, CURLOPT_USERAGENT, "SoundDonate/1.0.0");
     curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Client-ID: ' . self::CLIENT_ID));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
