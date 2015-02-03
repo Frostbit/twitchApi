@@ -28,12 +28,12 @@ class Twitch
         break;
       case "channel-videos":
         $url = self::API_URL . "/channels/" . $param . "/videos";
-        break
+        break;
       case "channel-follows":
         $url = self::API_URL . "/channels/" . $param . "/follows";
         break;
       case "games":
-        $url = self::API_RUL . "/games/top?limit=" . $param . "&offset=" . $param2;
+        $url = self::API_URL . "/games/top?limit=" . $param . "&offset=" . $param2;
         break;
       case "chat":
         $url = self::API_URL . "/chat/" . $param;
