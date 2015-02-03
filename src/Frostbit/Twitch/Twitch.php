@@ -53,10 +53,17 @@ class Twitch
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
-    $output = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if(!$httpCode != 200) {
+      // TO-DO: Without response, insert message into log
+      $result = false;
+    }
+
+    $result = curl_exec($ch);
     curl_close($ch);
 
-    return $output;
+    return $result;
   }
 
   /* Get channel informations */
