@@ -98,7 +98,7 @@ class Twitch
   /* get user detail */
   public function getUser($name, $token = null)
   {
-    $url = self::API_URL . "/user/" . $name;
+    $url = self::API_URL . "/users/" . $name;
     return $this->getResponse($url, $token);
   }
 
