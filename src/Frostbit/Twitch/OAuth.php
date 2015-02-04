@@ -14,7 +14,7 @@ class OAuth
 
   const OAUTH_URL = 'https://api.twitch.tv/kraken/oauth2/authorize';
   const CLIENT_ID = 'fkevhl9oi795jqt3bdwmfn6xupunzkf';
-  const BACK_URL  = 'http://localhost:8888/oauth';
+  const BACK_URL  = 'http://sounddonate.dev:8888/oauth';
   const SCOPE     = 'user_read';
 
   public function getAuthenticateUri()
