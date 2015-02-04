@@ -95,6 +95,13 @@ class Twitch
     return $this->getResponse($url);
   }
 
+  /* Get stream informations */
+  public function getStream($name)
+  {
+    $url = self::API_URL . "/streams/" . $name;
+    return $this->getResponse($url);
+  }
+
   /* get user detail */
   public function getUser($name, $token = null)
   {
