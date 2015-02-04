@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "license": "GPL-2.0+",
     "type": "library",
-    "description": "The \"Twitch\" API developed by Frostbit.cz",
+    "description": "Twitch.tv API Library developed by Frostbit.cz. Currently in development.",
     "authors": [
         {
             "name": "Tomas Volsansky",
