@@ -17,7 +17,7 @@ class Twitch
   const CLIENT_ID = 'fkevhl9oi795jqt3bdwmfn6xupunzkf';
 
   /* Get Twitch API response */
-  private function getResponse($url)
+  private function getResponse($url, $token = null)
   {
     if (!function_exists('curl_init')){
         die('cURL is not installed! Check your php.ini and enable cURL.');
@@ -28,7 +28,15 @@ class Twitch
     curl_setopt($ch, CURLOPT_REFERER, "https://www.sounddonate.com/");
     curl_setopt($ch, CURLOPT_USERAGENT, "SoundDonate/1.0.0");
     curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: ' . self::ACCEPT, 'Client-ID: ' . self::CLIENT_ID));
+
+    /* Twitch HTTP header */
+    $header = array();
+    $header[] = 'Accept: ' . self::ACCEPT;
+    $header[] = 'Client-ID: ' . self::CLIENT_ID;
+    if($token != null) {
+      $header[] = 'Authorization: OAuth ' . $token;
+    }
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
@@ -85,6 +93,13 @@ class Twitch
   {
     $url = self::API_URL . "/chat/" . $name . "/emoticons";
     return $this->getResponse($url);
+  }
+
+  /* get user detail */
+  public function getUser($name, $token = null)
+  {
+    $url = self::API_URL . "/user/" . $name;
+    return $this->getResponse($url, $token);
   }
 
 }
