@@ -14,13 +14,13 @@ Put following line into your composer.json (require) and run composer update. [P
 Update return URI, Scopes and Client ID in OAuth & Twitch classes.
 ```php
 // Frostbit/Twitch/OAuth.php
-const CLIENT_ID = 'fkevhl9oi795jqt3bdwmfn6xupunzkf';
-const BACK_URL  = 'http://sounddonate.dev:8888/oauth';
+const CLIENT_ID = 'YOUR-CLIENT-ID-PROVIDED-BY-TWITCH';
+const BACK_URL  = 'YOUR-RETURN-URI e.g. http://myapp.com/twitch-oauth';
 const SCOPE     = 'user_read';
 
 // Frostbit/Twitch/Twitch.php
 const ACCEPT    = 'application/vnd.twitchtv.v3+json';
-const CLIENT_ID = 'fkevhl9oi795jqt3bdwmfn6xupunzkf';
+const CLIENT_ID = 'YOUR-CLIENT-ID-PROVIDED-BY-TWITCH';
 ```
 
 ## Usage
