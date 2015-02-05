@@ -1,8 +1,9 @@
 # twitchApi
 Twitch.tv API Library developed by Frostbit.cz. Currently in development. :space_invader:
 
-![Build](https://scrutinizer-ci.com/g/Frostbit/twitchApi/badges/build.png?b=master)
-![Build](https://scrutinizer-ci.com/g/Frostbit/twitchApi/badges/quality-score.png?b=master)
+[![Build Status](https://scrutinizer-ci.com/g/Frostbit/twitchApi/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Frostbit/twitchApi/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Frostbit/twitchApi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Frostbit/twitchApi/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Frostbit/twitchApi/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Frostbit/twitchApi/?branch=master)
 
 ## Install
 Put following line into your composer.json (require) and run composer update. [Packagist!](https://packagist.org/packages/frostbit/twitch)
