@@ -20,7 +20,7 @@ class Twitch
   private function getResponse($url, $token = null)
   {
     if (!function_exists('curl_init')){
-        die('cURL is not installed! Check your php.ini and enable cURL.');
+        throw new Exception('cURL library is not installed. Check your php.ini and enable cURL.');
     }
 
     $ch = curl_init();
