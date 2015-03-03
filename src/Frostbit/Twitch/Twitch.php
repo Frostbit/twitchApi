@@ -14,7 +14,7 @@ class Twitch
 
   const API_URL   = 'https://api.twitch.tv/kraken';
   const ACCEPT    = 'application/vnd.twitchtv.v3+json';
-  const CLIENT_ID = 'fkevhl9oi795jqt3bdwmfn6xupunzkf';
+  const CLIENT_ID = '';
 
   /* Get Twitch API response */
   private function getResponse($url, $token = null)
@@ -106,6 +106,13 @@ class Twitch
   public function getUser($name, $token = null)
   {
     $url = self::API_URL . "/users/" . $name;
+    return $this->getResponse($url, $token);
+  }
+
+  /* get authorized user */
+  public function getAuthorizedUser($token)
+  {
+    $url = self::API_URL . "/user";
     return $this->getResponse($url, $token);
   }
 
