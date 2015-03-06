@@ -74,6 +74,13 @@ class Twitch
     return $this->getResponse($url);
   }
 
+  /* Search (Channels) */
+  public function searchChannels($query, $limit, $offset)
+  {
+    $url = self::API_URL . "/search/channels?q=" . $query . "&limit=" . $limit . "&offset=" . $offset;
+    return $this->getResponse($url);
+  }
+
   /* Get top games (available params limit, offset) */
   public function getGames($limit = 10, $offset = 0)
   {
