@@ -53,7 +53,11 @@ class Twitch
     return json_decode($result);
   }
 
-  /* Get channel informations */
+  /*
+   * Get channel informations
+   * @param string
+   * @return stdClass
+   */
   public function getChannel($name)
   {
     $url = self::API_URL . "/channels/" . $name;
