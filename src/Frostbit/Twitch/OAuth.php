@@ -15,10 +15,14 @@ class OAuth
   const OAUTH_URL     = 'https://api.twitch.tv/kraken/oauth2/authorize';
   const TOKEN_URL     = 'https://api.twitch.tv/kraken/oauth2/token';
   const RESPONSE_TYPE = 'code';
-  const CLIENT_ID     = '';
-  const CLIENT_SECRET = '';
-  const BACK_URL      = '';
   const SCOPE         = 'user_read';
+
+  public function __construct($clientId, $clientSecret, $backUrl)
+  {
+      const CLIENT_ID     = $clientId;
+      const CLIENT_SECRET = $clientSecret;
+      const BACK_URL      = $backUrl;
+  }
 
   public function getAuthenticateUri()
   {

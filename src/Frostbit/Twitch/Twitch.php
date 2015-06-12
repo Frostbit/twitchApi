@@ -14,7 +14,11 @@ class Twitch
 
   const API_URL   = 'https://api.twitch.tv/kraken';
   const ACCEPT    = 'application/vnd.twitchtv.v3+json';
-  const CLIENT_ID = '';
+
+  public function __construct($clientId) 
+  {
+      const CLIENT_ID = $clientId;
+  }
 
   /* Get Twitch API response */
   private function getResponse($url, $token = null)
