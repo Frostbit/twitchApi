@@ -1,9 +1,9 @@
 {
     "name": "frostbit/twitch",
-    "version": "1.0.0",
-    "license": "GPL-2.0+",
+    "version": "1.2.0",
+    "license": "MIT",
     "type": "library",
-    "description": "Twitch.tv API Library developed by Frostbit.cz. Currently in development.",
+    "description": "Twitch.tv API library developed by Frostbit.cz.",
     "authors": [
         {
             "name": "Tomas Volsansky",
@@ -22,6 +22,7 @@
         "psr-0": { "Frostbit\\Twitch\\": "src/" }
     },
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "lib-curl": "*"
     }
 }
